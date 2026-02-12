@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repo') {
+            steps {
+                echo 'Cloning repository'
+            }
+        }
+
+        stage('Deploy Website') {
+            steps {
+                sh 'sudo cp index.html /var/www/html/'
+            }
+        }
+    }
+}
