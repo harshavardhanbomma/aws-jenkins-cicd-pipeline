@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git 'git@github.com:harshavardhanbommala/aws-jenkins-cicd-pipeline.git'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'sudo cp vb.html /var/www/html/index.html'
+            }
+        }
+    }
+}
